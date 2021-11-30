@@ -2,7 +2,7 @@
 
 ### cpp struct member
 ```tpl
-{tvpair};
+{whites}{tvpair};
 ```
 
 ### cpp function declaration
