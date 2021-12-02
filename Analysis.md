@@ -1,3 +1,13 @@
+## Main Work Flows
+
+1. factorization
+   dispatch input into parts
+2. transformation
+   transform parts from cpp form into golang form
+   recursion
+3. composition
+   composite the golang parts into outputs
+
 ## Cpp Content Structure
 
 ### cpp struct member
