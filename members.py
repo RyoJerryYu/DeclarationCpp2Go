@@ -26,7 +26,7 @@ class Member:
     return f'    {res_tvpair}'
 
 
-tvpairRe = re.compile(r'\W*(.+)\W*(.+)\W*')
+tvpairRe = re.compile(r'\W*([a-zA-Z0-9_\*]+)\W+(\w+)\W*')
 
 
 class TVPair:
