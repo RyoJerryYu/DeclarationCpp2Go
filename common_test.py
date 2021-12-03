@@ -1,0 +1,23 @@
+'''Tests for common.py'''
+from common import Capitalizer, TVPair, TypeName, VarName
+from protocol import DirectReturn
+
+
+def test_tvpair():
+  tvpair_p = TVPair(DirectReturn(), DirectReturn())
+  assert tvpair_p.transform('int a') == 'a int'
+
+
+def test_typename():
+  typename = TypeName(Capitalizer())
+  assert typename.transform('card_info*') == '*cardInfo'
+
+
+def test_varname():
+  varname = VarName(Capitalizer())
+  assert varname.transform('card_info') == 'cardInfo'
+
+
+def test_capitalizer():
+  capitalizer = Capitalizer()
+  assert capitalizer.transform('card') == 'Card'
