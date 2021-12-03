@@ -1,15 +1,19 @@
-'''The class method compiler
+'''The class method pattern.
 '''
-
 import re
 from typing import List
+
 from protocol import Pattern
 
 methodRe = re.compile(r'\W*([a-zA-Z0-9_\*]+)\W+(\w+)\((.*)\);\W*')
 
 
 class Method:
-  '''The class method compiler
+  '''The class method pattern.
+
+  Example:
+    '    int foo(int a, int b);'
+  ->'    foo(a int, b int) int'
     '''
   type_name: Pattern
   fname: Pattern
@@ -31,7 +35,10 @@ class Method:
 
 
 class FuncName:
-  '''The function name compiler
+  '''The function name pattern.
+
+  Example:
+    'foo_bar_baz' -> 'FooBarBaz'
   '''
   word_p: Pattern
 
@@ -49,7 +56,10 @@ class FuncName:
 
 
 class TVList:
-  '''The type variable list compiler
+  '''The type variable list pattern.
+
+  Example:
+    'int a, int b' -> 'a int, b int'
   '''
   tvpair_p: Pattern
 
