@@ -10,7 +10,7 @@ def test_member():
 
 def test_member_default():
   member_p = Member()
-  assert member_p.transform('    int* a;') == '    A *int'
+  assert member_p.transform('    card* a;') == '    A Card'
 
 
 def test_member_empty_lines():

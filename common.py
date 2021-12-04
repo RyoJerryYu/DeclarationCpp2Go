@@ -50,7 +50,8 @@ class TypeName:
   '''The type pattern.
 
   Example:
-    'card_info*' -> '*cardInfo'
+    'card_info*' -> 'CardInfo'
+    'card_info' -> 'cardInfo'
   '''
   word_p: Pattern
 
@@ -62,18 +63,20 @@ class TypeName:
       return ''
 
     star = ''
-    words: List[str]
+    res_words: List[str] = []
     if source.endswith('*'):
-      star = '*'
+      # a pointer will convert into public interface
       words = source[:-1].split('_')
+      for word in words:
+        res_words.append(self.word_p.transform(word))
     else:
+      # normal type will convert into private type
       words = source.split('_')
+      res_words.append(words[0])
+      for word in words[1:]:
+        res_words.append(self.word_p.transform(word))
 
-    res_words = [words[0]]
-    for word in words[1:]:
-      res_words.append(self.word_p.transform(word))
-
-    return star + ''.join(res_words)
+    return ''.join(res_words)
 
 
 class TVPair:

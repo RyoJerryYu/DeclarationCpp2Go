@@ -23,14 +23,19 @@ def test_varname_public():
   assert varname.transform('card_info') == 'CardInfo'
 
 
-def test_typename():
+def test_typename_pointer():
   typename = TypeName(Capitalizer())
-  assert typename.transform('card_info*') == '*cardInfo'
+  assert typename.transform('card_info*') == 'CardInfo'
+
+
+def test_typename_not_pointer():
+  typename = TypeName(Capitalizer())
+  assert typename.transform('card_info') == 'cardInfo'
 
 
 def test_typename_default():
   typename = TypeName()
-  assert typename.transform('card_info*') == '*cardInfo'
+  assert typename.transform('card_info*') == 'CardInfo'
 
 
 def test_typename_empty():
