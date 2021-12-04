@@ -6,8 +6,6 @@ from typing import List
 from protocol import Pattern
 from common import Capitalizer, TVPair, TypeName
 
-methodRe = re.compile(r'\W*([a-zA-Z0-9_\*]+)\W+(\w+)\((.*)\).*;\W*')
-
 
 class FuncName:
   '''The function name pattern.
@@ -51,6 +49,9 @@ class TVList:
       res_tvpairs.append(self.tvpair_p.transform(tvpair))
 
     return ', '.join(res_tvpairs)
+
+
+methodRe = re.compile(r'\W*([a-zA-Z0-9_\*]+)\W+(\w+)\((.*)\).*;\W*')
 
 
 class Method:
