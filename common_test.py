@@ -3,14 +3,9 @@ from common import Capitalizer, TVPair, TypeName, VarName
 from protocol import DirectReturn
 
 
-def test_tvpair():
-  tvpair_p = TVPair(DirectReturn(), DirectReturn())
-  assert tvpair_p.transform('int a') == 'a int'
-
-
-def test_typename():
-  typename = TypeName(Capitalizer())
-  assert typename.transform('card_info*') == '*cardInfo'
+def test_capitalizer():
+  capitalizer = Capitalizer()
+  assert capitalizer.transform('card') == 'Card'
 
 
 def test_varname():
@@ -18,6 +13,26 @@ def test_varname():
   assert varname.transform('card_info') == 'cardInfo'
 
 
-def test_capitalizer():
-  capitalizer = Capitalizer()
-  assert capitalizer.transform('card') == 'Card'
+def test_varname_default():
+  varname = VarName()
+  assert varname.transform('card_info') == 'cardInfo'
+
+
+def test_typename():
+  typename = TypeName(Capitalizer())
+  assert typename.transform('card_info*') == '*cardInfo'
+
+
+def test_typename_default():
+  typename = TypeName()
+  assert typename.transform('card_info*') == '*cardInfo'
+
+
+def test_tvpair():
+  tvpair_p = TVPair(DirectReturn(), DirectReturn())
+  assert tvpair_p.transform('int a') == 'a int'
+
+
+def test_tvpair_default():
+  tvpair_p = TVPair()
+  assert tvpair_p.transform('int a') == 'a int'
