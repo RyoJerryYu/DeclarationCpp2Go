@@ -62,7 +62,6 @@ class TypeName:
     if source == '':
       return ''
 
-    star = ''
     res_words: List[str] = []
     if source.endswith('*'):
       # a pointer will convert into public interface
