@@ -1,6 +1,7 @@
 '''The structure member pattern.
 '''
 import re
+from common import TVPair
 
 from protocol import Pattern
 
@@ -15,7 +16,7 @@ class Member:
     '''
   tvpair_p: Pattern
 
-  def __init__(self, tvpair_p: Pattern):
+  def __init__(self, tvpair_p: Pattern = TVPair()):
     self.tvpair_p = tvpair_p
 
   def transform(self, source: str):
