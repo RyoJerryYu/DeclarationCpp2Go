@@ -34,7 +34,7 @@ class VarName:
 
   def transform(self, source: str):
     words = source.split('_')
-    res_words: list[str] = []
+    res_words: List[str] = []
 
     if not self.is_public:
       res_words = [words[0]]
