@@ -42,6 +42,8 @@ class TVList:
     self.tvpair_p = tvpair_p
 
   def transform(self, source: str) -> str:
+    if len(source) == 0:
+      return ''
     tvpairs = [x.strip() for x in source.split(',')]
 
     res_tvpairs: List[str] = []

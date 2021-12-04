@@ -34,3 +34,8 @@ def test_method_default():
   method_p = Method()
   assert method_p.transform(
       '    int foo(int a, int b);') == '    Foo(a int, b int) int'
+
+
+def test_method_default_no_args():
+  method_p = Method()
+  assert method_p.transform('    uint32 get_type();') == '    GetType() uint32'
