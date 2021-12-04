@@ -73,6 +73,9 @@ class Method:
     self.tvlist = tvlist
 
   def transform(self, source: str) -> str:
+    if len(source.strip()) == 0:
+      return ''
+
     type, func, tvlist = methodRe.findall(source)[0]  # pylint: disable=redefined-builtin
 
     if type == 'void':

@@ -11,3 +11,8 @@ def test_member():
 def test_member_default():
   member_p = Member()
   assert member_p.transform('    int* a;') == '    A *int'
+
+
+def test_member_empty_lines():
+  member_p = Member()
+  assert member_p.transform('\n\n    \n') == ''

@@ -7,8 +7,6 @@ from methods import Method
 def main():
   method_pattern = Method()
   for line in fileinput.input():
-    if line.strip() == '':
-      continue
     res = method_pattern.transform(line.removesuffix('\n'))
     print(res)
 

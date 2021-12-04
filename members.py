@@ -21,6 +21,9 @@ class Member:
     self.tvpair_p = tvpair_p
 
   def transform(self, source: str):
+    if len(source.strip()) == 0:
+      return ''
+
     tvpair_p = memberRe.findall(source)[0]
 
     res_tvpair = self.tvpair_p.transform(tvpair_p)

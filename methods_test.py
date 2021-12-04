@@ -45,3 +45,8 @@ def test_method_void_type():
   method_p = Method()
   assert method_p.transform(
       '    void foo(int a, int b);') == '    Foo(a int, b int) '
+
+
+def test_method_empty_lines():
+  method_p = Method()
+  assert method_p.transform('\n\n\n    \n') == ''

@@ -7,8 +7,6 @@ from members import Member
 def main():
   member_pattern = Member()
   for line in fileinput.input():
-    if line.strip() == '':
-      continue
     res = member_pattern.transform(line.removesuffix('\n'))
     print(res)
 
