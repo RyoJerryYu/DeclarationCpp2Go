@@ -75,6 +75,9 @@ class Method:
   def transform(self, source: str) -> str:
     type, func, tvlist = methodRe.findall(source)[0]  # pylint: disable=redefined-builtin
 
+    if type == 'void':
+      type = ''
+
     res_type = self.type_name.transform(type)
     res_func = self.fname.transform(func)
     res_tvlist = self.tvlist.transform(tvlist)

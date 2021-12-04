@@ -28,6 +28,11 @@ def test_typename_default():
   assert typename.transform('card_info*') == '*cardInfo'
 
 
+def test_typename_empty():
+  typename = TypeName(Capitalizer())
+  assert typename.transform('') == ''
+
+
 def test_tvpair():
   tvpair_p = TVPair(DirectReturn(), DirectReturn())
   assert tvpair_p.transform('int a') == 'a int'

@@ -52,6 +52,9 @@ class TypeName:
     self.word_p = word_p
 
   def transform(self, source: str):
+    if source == '':
+      return ''
+
     star = ''
     words: List[str]
     if source.endswith('*'):
