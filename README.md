@@ -1,5 +1,14 @@
 # DeclarationCpp2Go
 A small tool script that convert the C++ declaration to Golang. It **DO NOT** generate runnable golang script. 
+ 
+### Usage
+
+```bash
+$ python main_funcs.py path/to/your/input.file > path/to/your/output.file
+$ python main_members.py path/to/your/input.file > path/to/your/output.file
+```
+
+### How will it works like
 
 It convert: 
 - C++ structs and classes members to Golang struct
