@@ -50,3 +50,9 @@ def test_method_void_type():
 def test_method_empty_lines():
   method_p = Method()
   assert method_p.transform('\n\n\n    \n') == ''
+
+
+def test_method_with_const():
+  method_p = Method(DirectReturn(), DirectReturn(), DirectReturn())
+  assert method_p.transform(
+      '    int foo(int a, int b) const ;') == '    foo(int a, int b) int'

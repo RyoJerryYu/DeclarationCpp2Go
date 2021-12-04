@@ -6,7 +6,7 @@ from typing import List
 from protocol import Pattern
 from common import Capitalizer, TVPair, TypeName
 
-methodRe = re.compile(r'\W*([a-zA-Z0-9_\*]+)\W+(\w+)\((.*)\);\W*')
+methodRe = re.compile(r'\W*([a-zA-Z0-9_\*]+)\W+(\w+)\((.*)\).*;\W*')
 
 
 class FuncName:
