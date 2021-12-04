@@ -1,5 +1,7 @@
 # DeclarationCpp2Go
 A small tool script that convert the C++ declaration to Golang. It **DO NOT** generate runnable golang script. 
+
+[![github workflow](https://img.shields.io/github/workflow/status/RyoJerryYu/DeclarationCpp2Go/Python/main?logo=github)](https://github.com/RyoJerryYu/DeclarationCpp2Go/actions?query=branch%3Amain) [![codecov](https://codecov.io/gh/RyoJerryYu/DeclarationCpp2Go/branch/main/graph/badge.svg?token=PJ9OR1N7JI)](https://codecov.io/gh/RyoJerryYu/DeclarationCpp2Go)
  
 ### Usage
 
