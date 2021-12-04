@@ -18,6 +18,11 @@ def test_varname_default():
   assert varname.transform('card_info') == 'cardInfo'
 
 
+def test_varname_public():
+  varname = VarName(Capitalizer(), is_public=True)
+  assert varname.transform('card_info') == 'CardInfo'
+
+
 def test_typename():
   typename = TypeName(Capitalizer())
   assert typename.transform('card_info*') == '*cardInfo'

@@ -10,4 +10,4 @@ def test_member():
 
 def test_member_default():
   member_p = Member()
-  assert member_p.transform('    int* a;') == '    a *int'
+  assert member_p.transform('    int* a;') == '    A *int'

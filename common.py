@@ -26,15 +26,21 @@ class VarName:
     'card_info' -> 'cardInfo'
   '''
   word_p: Pattern
+  is_public: bool
 
-  def __init__(self, word_p: Pattern = Capitalizer()):
+  def __init__(self, word_p: Pattern = Capitalizer(), is_public: bool = False):
     self.word_p = word_p
+    self.is_public = is_public
 
   def transform(self, source: str):
     words = source.split('_')
+    res_words: list[str] = []
 
-    res_words = [words[0]]
-    for word in words[1:]:
+    if not self.is_public:
+      res_words = [words[0]]
+      words = words[1:]
+
+    for word in words:
       res_words.append(self.word_p.transform(word))
 
     return ''.join(res_words)
